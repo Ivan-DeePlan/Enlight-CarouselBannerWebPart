@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.19.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.1",
+    "libraryName": "carousel-banner",
+    "libraryId": "150d6f94-a8f7-451b-8fbd-1f262585b455",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "carousel-banner",
+    "solutionShortDescription": "carousel-banner description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

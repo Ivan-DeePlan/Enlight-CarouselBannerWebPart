@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "carousel-banner-client-side-solution",
+    "id": "150d6f94-a8f7-451b-8fbd-1f262585b455",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "carousel-banner description"
+      },
+      "longDescription": {
+        "default": "carousel-banner description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "carousel-banner Feature",
+        "description": "The feature that activates elements of the carousel-banner solution.",
+        "id": "6c00fe68-8edc-4512-94c3-6a1bad3f78e5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/carousel-banner.sppkg"
+  }
+}
