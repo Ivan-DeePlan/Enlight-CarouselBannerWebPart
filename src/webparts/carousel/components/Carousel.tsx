@@ -39,11 +39,15 @@ export default class Carousel extends React.Component<
   CarouselForm = () => {
     this.sp.web.lists
       .getById(this.props.GalleryId)
-      .items.select("FileRef, Id, TitleLink, show, Ordering")
+      .items.select("FileRef, Id, TitleLink, show, Ordering, PhotoDescription")
       .filter("show eq 1")
       .top(this.props.numberOfImages)
       .orderBy("Ordering")()
+      .catch((err) => {
+        console.log(err);
+      })
       .then((items) => {
+        console.log(items);
         this.setState({
           items: items,
           IsLoading: false,
@@ -86,17 +90,32 @@ export default class Carousel extends React.Component<
         <CarouselItem
           tag="div"
           key={item.Id}
+          className={styles.imageContainer}
           onExiting={() => this.setState({ animating: true })}
           onExited={() => this.setState({ animating: false })}
           style={{ width: "10px" }}
         >
           <img src={item.FileRef} />
-          <CarouselCaption
-            captionText={""}
-            captionHeader={
-              <a href={item.TitleLink.Url}>{item.TitleLink.Description}</a>
-            }
-          />
+          {item.TitleLink && (
+            <div className={styles.divCarouselCaption}>
+              <CarouselCaption
+                className="w-100"
+                style={{}}
+                captionHeader={
+                  <div>
+                    <a className={styles.TitleLink} href={item.TitleLink.Url}>
+                      {item.TitleLink.Description}
+                    </a>
+                  </div>
+                }
+                captionText={
+                  <div className={styles.descriptionAndTime}>
+                    {item.PhotoDescription}
+                  </div>
+                }
+              />
+            </div>
+          )}
         </CarouselItem>
       );
     });
